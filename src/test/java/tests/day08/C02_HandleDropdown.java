@@ -9,10 +9,16 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 import java.util.List;
-
+//  Go to amazon.com
+//  To choose one of the elements from the dropdown;
+//  1. Locate the dropdown element and assign it to a variable
+//  2. Build an object from Select class and write the web element that we locate as parameter
+//  (By using the select object) We can choose one of the dropdown options with the
+//  help of 3 available methods. These 3 methods that help us to choose are viod.
+//  Therefore, they will not return anything but choose.
+//  If we want to write the selected option value;
 public class C02_HandleDropdown {
 
     WebDriver driver;
@@ -28,13 +34,13 @@ public class C02_HandleDropdown {
     @Test
     public void dropdownTest () throws InterruptedException {
         //  To choose one of the elements from the dropdown;
-        // 1. Locate the dropdown elment and assign it to a variable
+        // 1. Locate the dropdown element and assign it to a variable
         driver.get("https://amazon.com");
         WebElement dropdowmElement = driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
-        //  2. Build an object from Select class and write thewebelement that we locate as parameter
+        //  2. Build an object from Select class and write the webelement that we locate as parameter
         Select select = new Select(dropdowmElement);
         //  (By using the select object) We can choose one of the dropdown options with the
-        //  help of 3 available methods. These 3 methods that help us to choose are viod.
+        //  help of 3 available methods. These 3 methods that help us to choose are void.
         //  Therefore, they will not return anything but choose.
         select.selectByIndex(3);
         //  If we want to write the selected option value;

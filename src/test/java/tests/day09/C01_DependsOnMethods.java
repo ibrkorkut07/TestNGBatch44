@@ -28,9 +28,9 @@ public class C01_DependsOnMethods {
     @BeforeClass
     public void setup () {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(11));
+        driver=new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
     @Test
     public void logoTest () {
@@ -54,11 +54,10 @@ public class C01_DependsOnMethods {
     @Test (dependsOnMethods = "searchTest")
     public void priceTest () {
         driver.findElement(By.xpath("(//img[@class='s-image'])[1]")).click();
-        WebElement priceElement = driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
+        WebElement priceElement = driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[2]"));
         String productPrice = priceElement.getText();
-        String expectedPrice = "$14.99";
+        String expectedPrice="$14.99";
         Assert.assertTrue(productPrice.contains(expectedPrice));
-
         /*
         String actualPrice = driver.findElement(By.xpath("//span[@class='a-size-base a-color-price']")).getText();
         String expectedPrice = "$14.99";
