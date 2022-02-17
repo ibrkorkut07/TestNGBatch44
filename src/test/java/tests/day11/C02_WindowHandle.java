@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -56,5 +57,9 @@ public class C02_WindowHandle {
         driver.switchTo().window(windowHandleDegeri1);
         softAssert.assertEquals(driver.getTitle(),"The Internet","ilk sayfanin title'i beklenen gibi degil");
         softAssert.assertAll();
+    }
+    @AfterClass
+    public void tearDown () {
+        driver.quit();
     }
 }
