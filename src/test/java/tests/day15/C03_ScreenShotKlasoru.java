@@ -11,7 +11,7 @@ import java.io.IOException;
 public class C03_ScreenShotKlasoru extends TestBase {
 
     // amazon'a gidin
-    // 3 farkli test mesthodu ile java, nutella ve elma aratip
+    // 3 farkli test metod ile java, nutella ve elma aratip
     // sonuc sayfasinin screenshot'i kaydedin
 
     WebElement aramaKutusu;
